@@ -3,7 +3,7 @@ from math import gcd
 
 def calculate_order(array):
     counter = 0
-    for i in range(len(array)):
+    for _ in range(len(array)):
         counter += 1
     return counter
 
