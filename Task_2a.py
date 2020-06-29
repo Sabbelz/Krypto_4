@@ -9,18 +9,15 @@ def calculate_order(array):
 
 
 def compute_complexity(g, p):
-    array = []
+    array = set()
     for k in range(1, p):
-        array.append((g ** k) % p)
-    array = list(set(array))
+        array.add((g ** k) % p)
     print("order: ", calculate_order(array))
-    counter = 0
     avg_order = 0
     for j in range(1, p):
         for i in range(1, p):
             avg_order += calculate_order(array) / gcd(calculate_order(array), i * j)
-            counter += 1
-    avg_order /= counter
+    avg_order /= pow(p - 1, 2)
     print("average order: ", avg_order)
     return avg_order
 
